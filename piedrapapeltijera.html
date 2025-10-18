@@ -7,7 +7,7 @@
     <script>
         //1 piedra, 2 Papel, Tijera
         let jugador = 0
-        let pc = 1
+        let pc = Math.floor(Math.random() * 3) + 1;
 
         jugador = prompt("Elige: 1 para Piedra, 2 para Papel, 3 para tijera")
        // alert("Elegiste: " + jugador)
@@ -38,7 +38,9 @@
             alert("EMPATE")
         }else if (jugador ==1 && pc ==3){
             alert("GANASTE")
-        }else if (pc ==1 && jugador == 2){
+        }else if (jugador == 2 && pc ==1){
+            alert("GANASTE")
+        }else if (jugador == 3 && pc ==2){
             alert("GANASTE")
         }else {
             alert("PERDISTE")
