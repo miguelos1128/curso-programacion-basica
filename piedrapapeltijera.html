@@ -3,19 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Piedra, Pape,l Tijera</title>
     <script>
         //1 piedra, 2 Papel, Tijera
         let jugador = 0
-        let pc = 2
+        let pc = 1
+
         jugador = prompt("Elige: 1 para Piedra, 2 para Papel, 3 para tijera")
        // alert("Elegiste: " + jugador)
        if(jugador==1){
-            alert("Elegiste Piedra")
+            alert("Elegiste Piedra 🪨")
        }else if(jugador == 2){
-            alert("Elegiste Papel")
+            alert("Elegiste Papel 🧻")
         }else if(jugador == 3){
-            alert("Elegiste Tijera")
+            alert("Elegiste Tijera ✂️")
+        }else{
+            alert("Elegiste PERDER")
+        }
+
+        if(pc==1){
+            alert("PC Elige Piedra 🪨")
+       }else if(pc == 2){
+            alert("PC Elige Papel 🧻")
+        }else if(pc == 3){
+            alert("PC Elige Tijera ✂️")
+        }else{
+            alert("PC Elige PERDER")
+        }
+
+
+        //COMBATE
+
+        if(pc == jugador){
+            alert("EMPATE")
+        }else if (jugador ==1 && pc ==3){
+            alert("GANASTE")
+        }else if (pc ==1 && jugador == 2){
+            alert("GANASTE")
+        }else {
+            alert("PERDISTE")
         }
     </script>
 </head>
