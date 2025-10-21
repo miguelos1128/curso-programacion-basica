@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piedra, Pape,l Tijera</title>
     <script>
+
+        function aleatorio (min,max){
+            return Math.floor(Math.random() * (max - min + 1 )+min) 
+        }
         //1 piedra, 2 Papel, Tijera
         let jugador = 0
-        let pc = Math.floor(Math.random() * 3) + 1;
+        let pc = aleatorio(1,3)
 
         jugador = prompt("Elige: 1 para Piedra, 2 para Papel, 3 para tijera")
        // alert("Elegiste: " + jugador)
@@ -25,7 +29,7 @@
             alert("PC Elige Piedra 🪨")
        }else if(pc == 2){
             alert("PC Elige Papel 🧻")
-        }else if(pc == 3){
+        }else if(pc == 3){  
             alert("PC Elige Tijera ✂️")
         }else{
             alert("PC Elige PERDER")

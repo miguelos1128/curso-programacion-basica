@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Pape,l Tijera</title>
+    <script>
+
+        function aleatorio(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        const opciones = ["", "Piedra 🪨", "Papel 🧻", "Tijera ✂️"];
+        const jugador = parseInt(prompt("Elige: 1 = Piedra, 2 = Papel, 3 = Tijera"));
+        const pc = aleatorio(1, 3);
+
+        alert(`Elegiste: ${opciones[jugador] || "Nada 😅"}`);
+        alert(`PC eligió: ${opciones[pc]}`);
+
+        if (jugador === pc) alert("EMPATE");
+        else if ((jugador === 1 && pc === 3) || (jugador === 2 && pc === 1) || (jugador === 3 && pc === 2))
+            alert("GANASTE 🎉");
+        else alert("PERDISTE 😢");
+    </script>
+</head>
+<body>
+    <h1>Piedra Papel o Tijera</h1>
+</body>
+</html>
