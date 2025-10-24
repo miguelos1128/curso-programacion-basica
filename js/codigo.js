@@ -18,9 +18,10 @@
         }
 
         function combate (computer, human){
-
-            if (human === computer) alert("EMPATE");
-            else if ((human === 1 && computer === 3) || (human === 2 && computer === 1) || (human === 3 && computer  === 2)){
+            
+            if (human == computer) {
+                alert("EMPATE")
+            }else if ((human == 1 && computer == 3) || (human == 2 && computer === 1) || (human === 3 && computer  === 2)){
                 alert("GANASTE 🎉")
                 triunfos = triunfos + 1
             } else{
@@ -31,12 +32,12 @@
         }
         //1 piedra, 2 Papel, Tijera
         let jugador = 0
-        let pc = 0
+        let pc = 1
         let triunfos = 0
         let perdidas = 0
 
         while (triunfos < 3 && perdidas < 3){
-            pc = aleatorio(1,3)
+            //pc = aleatorio(1,3)
             jugador = prompt("Elige: 1 para Piedra, 2 para Papel, 3 para tijera")
         
             alert("PC elige: " + eleccion(pc))
