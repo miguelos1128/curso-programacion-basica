@@ -1,17 +1,25 @@
 function iniciarJuego(){
 
+
+
 let botnMascotaJugador = document.getElementById('boton-mascota')
 botnMascotaJugador.addEventListener('click',seleccionarMascotaJugador)
 
 }
 function seleccionarMascotaJugador(){
 
-    if(document.getElementById('hipodege').checked){
-       alert("Seleccionaste Hipodoge") 
-    }else if(document.getElementById('ratigueya').checked){
-        alert("Seleccionaste: Ratigueya")
-    }else if(document.getElementById('capipepo').checked){
-        alert("Seleccionaste Capipepo")
+    let inputHipodoge = document.getElementById('hipodoge')
+    let inputRatigueya = document.getElementById('ratigueya')
+    let inputCapipepo = document.getElementById('capipepo')
+
+    if(inputHipodoge.checked){
+       alert("Seleccionaste a Hipodoge") 
+    }else if(inputRatigueya.checked){
+        alert("Seleccionaste a Ratigueya")
+    }else if(inputCapipepo.checked){
+        alert("Seleccionaste a Capipepo")
+    }else{
+        alert("Debes seleccionar una mascota")
     }
 }
 
