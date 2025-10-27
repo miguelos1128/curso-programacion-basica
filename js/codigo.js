@@ -6,11 +6,11 @@
         function eleccion(jugada){
             let resultado = ""
             if(jugada==1){
-                resultado = "Elegiste Piedra 🪨"
+                resultado = "Piedra 🪨"
             }else if(jugada == 2){
-                resultado = "Elegiste Papel 🧻"
+                resultado = "Papel 🧻"
             }else if(jugada == 3){
-                resultado = "Elegiste Tijera ✂️"
+                resultado = "Tijera ✂️"
             }else{
                 resultado = "MAL ELEGIDO"
             }
@@ -32,17 +32,18 @@
         }
         //1 piedra, 2 Papel, Tijera
         let jugador = 0
-        let pc = 1
+        let pc = 0
         let triunfos = 0
         let perdidas = 0
 
         while (triunfos < 3 && perdidas < 3){
-            //pc = aleatorio(1,3)
+            pc = aleatorio(1,3)
             jugador = prompt("Elige: 1 para Piedra, 2 para Papel, 3 para tijera")
         
-            alert("PC elige: " + eleccion(pc))
+            
             alert("Tú eliges: " + eleccion(jugador))
-""
+            alert("PC elige: " + eleccion(pc))
+
             combate(pc,jugador)
             
         }
