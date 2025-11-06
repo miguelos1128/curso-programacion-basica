@@ -106,10 +106,8 @@ function combateFinal (human, computer){
                 return "EMPATE"
             }else if ((human == "FUEGO" && computer == "TIERRA") || (human == "AGUA" && computer === "FUEGO") || (human === "TIERRA" && computer  === "AGUA")){
                 return "GANASTE 🎉"
-                //triunfos = triunfos + 1
             } else{
                 return "PERDISTE 😢"
-                //perdidas = perdidas + 1
             } 
 }
 function aleatorio (min,max){
