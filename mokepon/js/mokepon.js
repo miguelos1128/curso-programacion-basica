@@ -1,6 +1,7 @@
 function iniciarJuego(){
 
 let ataqueJugador = ''
+let ataqueEnemigo = ''
 
 let botnMascotaJugador = document.getElementById('boton-mascota')
 botnMascotaJugador.addEventListener('click',seleccionarMascotaJugador)
@@ -9,7 +10,7 @@ botnMascotaJugador.addEventListener('click',seleccionarMascotaJugador)
 let botonFuego = document.getElementById('boton-fuego')
 botonFuego.addEventListener('click',ataqueFuego)
 let botonAgua = document.getElementById('boton-agua') 
-botonAgua.addEventListener('click',ataqueFuego)
+botonAgua.addEventListener('click',ataqueAgua)
 let botonTierra = document.getElementById('boton-tierra')
 botonTierra.addEventListener('click',ataqueTierra)
 
@@ -57,14 +58,59 @@ function seleccionarMascotaEnemigo(){
 
 function ataqueFuego(){
     ataqueJugador = 'FUEGO'
+    elegirtAtaqueEnemigo()
+    //alert("Elegiste: " + ataqueJugador +" VS "+ ataqueEnemigo)
 }
 
 function ataqueAgua(){
     ataqueJugador = 'AGUA'
+    elegirtAtaqueEnemigo()
+    //alert("Elegiste: "  + ataqueJugador+ " VS "+ ataqueEnemigo)
 }
 
 function ataqueTierra(){
     ataqueJugador = 'TIERRA'
+    elegirtAtaqueEnemigo()
+    //alert("Elegiste: " + ataqueJugador +  " VS " +  ataqueEnemigo)
+}
+
+function elegirtAtaqueEnemigo() {
+    let ataqueEnemigoAleatorio = aleatorio(1,3)
+    
+            if(ataqueEnemigoAleatorio==1){
+                ataqueEnemigo = "FUEGO"
+            }else if(ataqueEnemigoAleatorio == 2){
+                ataqueEnemigo = "AGUA"
+            }else if(ataqueEnemigoAleatorio == 3){
+                ataqueEnemigo = "TIERRA"
+            }else{
+                ataqueEnemigo = "MAL ELEGIDO"
+            }
+
+            createMensaje()
+    
+}
+
+function createMensaje(){
+    let sectioMensajes = document.getElementById("mensajes")
+    let resultado = combateFinal(ataqueJugador,ataqueEnemigo)
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML = 'Tu mascota ataco con ' + ataqueJugador +', la mascota del enemigo ataco con ' + ataqueEnemigo + ' - ' + resultado;
+
+    sectioMensajes.appendChild(parrafo)
+}
+
+function combateFinal (human, computer){
+      
+            if (human == computer) {
+                return "EMPATE"
+            }else if ((human == "FUEGO" && computer == "TIERRA") || (human == "AGUA" && computer === "FUEGO") || (human === "TIERRA" && computer  === "AGUA")){
+                return "GANASTE 🎉"
+                //triunfos = triunfos + 1
+            } else{
+                return "PERDISTE 😢"
+                //perdidas = perdidas + 1
+            } 
 }
 function aleatorio (min,max){
             return Math.floor(Math.random() * (max - min + 1 )+min) 
