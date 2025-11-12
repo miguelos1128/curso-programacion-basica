@@ -3,23 +3,28 @@ let vidasEnemigo = 3
 
 function iniciarJuego(){
 
-let ataqueJugador = ''
-let ataqueEnemigo = ''
+    let ataqueJugador = ''
+    let ataqueEnemigo = ''
+
+    let sectionSeleccionarMensaje = document.getElementById('seleccionar-ataque')
+    sectionSeleccionarMensaje.style.display = 'none'
+    let sectionBotonReiniciar = document.getElementById('reiniciar')
+    sectionBotonReiniciar.style.display = 'none'
 
 
-let botnMascotaJugador = document.getElementById('boton-mascota')
-botnMascotaJugador.addEventListener('click',seleccionarMascotaJugador)
+    let botnMascotaJugador = document.getElementById('boton-mascota')
+    botnMascotaJugador.addEventListener('click',seleccionarMascotaJugador)
 
 
-let botonFuego = document.getElementById('boton-fuego')
-botonFuego.addEventListener('click',ataqueFuego)
-let botonAgua = document.getElementById('boton-agua') 
-botonAgua.addEventListener('click',ataqueAgua)
-let botonTierra = document.getElementById('boton-tierra')
-botonTierra.addEventListener('click',ataqueTierra)
+    let botonFuego = document.getElementById('boton-fuego')
+    botonFuego.addEventListener('click',ataqueFuego)
+    let botonAgua = document.getElementById('boton-agua') 
+    botonAgua.addEventListener('click',ataqueAgua)
+    let botonTierra = document.getElementById('boton-tierra')
+    botonTierra.addEventListener('click',ataqueTierra)
 
-let botonReiniciar = document.getElementById('boton-reiniciar')
-botonReiniciar.addEventListener('click',btnReiniciar)
+    let botonReiniciar = document.getElementById('boton-reiniciar')
+    botonReiniciar.addEventListener('click',btnReiniciar)
 
 }
 function seleccionarMascotaJugador(){
@@ -28,6 +33,9 @@ function seleccionarMascotaJugador(){
     let inputRatigueya = document.getElementById('ratigueya')
     let inputCapipepo = document.getElementById('capipepo')
     let spanMascotaJugador = document.getElementById('mascota-jugador')
+
+    let sectionSeleccionarMensaje = document.getElementById('seleccionar-ataque')
+    sectionSeleccionarMensaje.style.display = 'block'
 
     if(inputHipodoge.checked){
        spanMascotaJugador.innerHTML = 'Hipodogue' 
@@ -147,6 +155,9 @@ function crearMensajeFinal(ResultadoFinal){
     
     let parrafo = document.createElement('p')
     parrafo.innerHTML = ResultadoFinal
+
+    let sectionBotonReiniciar = document.getElementById('reiniciar')
+    sectionBotonReiniciar.style.display = 'block'
     
     sectioMensajes.appendChild(parrafo)
 
@@ -160,7 +171,7 @@ function crearMensajeFinal(ResultadoFinal){
 }
 
 function btnReiniciar(){
-    alert('Reiniciando Juego')
+    //alert('Reiniciando Juego')
 
     location.reload()
 
