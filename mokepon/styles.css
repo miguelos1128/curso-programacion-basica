@@ -64,4 +64,19 @@ input{
     border: 2px solid white;
     margin-top: 30px;
 }
-/* color de fondo, borde width y hight, espaciado interno y externo */
+
+#seleccionar-ataque{
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-ataque{
+    background: #53629E;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: transparent;
+    width: 100px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}

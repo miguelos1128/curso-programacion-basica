@@ -34,8 +34,11 @@ function seleccionarMascotaJugador(){
     let inputCapipepo = document.getElementById('capipepo')
     let spanMascotaJugador = document.getElementById('mascota-jugador')
 
+    let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+    sectionSeleccionarMascota.style.display = 'none'
+
     let sectionSeleccionarMensaje = document.getElementById('seleccionar-ataque')
-    sectionSeleccionarMensaje.style.display = 'block'
+    sectionSeleccionarMensaje.style.display = 'flex'
 
     if(inputHipodoge.checked){
        spanMascotaJugador.innerHTML = 'Hipodogue' 
