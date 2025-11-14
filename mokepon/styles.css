@@ -26,7 +26,7 @@ body{
     font-size: 20px;
 }
 
-.tarjetas{
+.tarjetas, .tarjetas-ataque{
     display: flex;
     gap: 10px;
 }
@@ -105,6 +105,22 @@ input{
 
 .ataques div{
     justify-items: center;
+    /* otra forma de hacerlo
+    display: flex; 
+    flex-direction: column;
+    align-items: center; */
+}
+
+#vidas-jugador, #vidas-enemigo {
+    font-size: 32px;
+    margin-bottom: 0;
+}
+
+@media(max-width: 360px){
+    .tarjetas, .tarjetas-ataque{
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 /* El atajo del teclado para comentar las lineas seleccionadas es ALT+SHIFT+A */
 /* orizontalmente centrados, seccion tipografia */
