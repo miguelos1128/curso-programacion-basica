@@ -1,10 +1,11 @@
 let vidasJugador = 3
 let vidasEnemigo = 3
+let ataqueJugador = ''
+let ataqueEnemigo = ''
 
 function iniciarJuego(){
 
-    let ataqueJugador = ''
-    let ataqueEnemigo = ''
+    
 
     let sectionSeleccionarMensaje = document.getElementById('seleccionar-ataque')
     sectionSeleccionarMensaje.style.display = 'none'
@@ -142,27 +143,37 @@ function combateFinal (human, computer){
 
 
 function createMensaje(){
-    let sectioMensajes = document.getElementById("mensajes")
+    let sectioMensajes = document.getElementById("resultado")
+    let ataqueDelEnemigo = document.getElementById("ataque-del-enemigo")
+    let ataqueDelJugador = document.getElementById("ataque-del-jugador")  
+
+    //let notificacion = document.createElement('p')// ya no lo cremaos ahora existe
+    let nuevoAtaqueDelJugador = document.createElement('p')
+    let nuevoAtaqueDelEnemigo = document.createElement('p')
+
     let resultado = combateFinal(ataqueJugador,ataqueEnemigo)
+
+    //notificacion.innerHTML = resultado
+    sectioMensajes.innerHTML = resultado//mandamos el mensaje de forma directa
+    nuevoAtaqueDelJugador.innerHTML = ataqueJugador
+    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
     
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = 'Tu mascota ataco con ' + ataqueJugador +', la mascota del enemigo ataco con ' + ataqueEnemigo + ' - ' + resultado;
-    
-    sectioMensajes.appendChild(parrafo)
+    ///sectioMensajes.appendChild(notificacion)//ya no se requiere
+    ataqueDelJugador.appendChild(nuevoAtaqueDelJugador)
+    ataqueDelEnemigo.appendChild(nuevoAtaqueDelEnemigo )
     revisarVidas()
 }
 
 function crearMensajeFinal(ResultadoFinal){
-    let sectioMensajes = document.getElementById("mensajes")
+    let sectioMensajes = document.getElementById("resultado")  
     
     
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = ResultadoFinal
+    sectioMensajes.innerHTML = ResultadoFinal
 
     let sectionBotonReiniciar = document.getElementById('reiniciar')
     sectionBotonReiniciar.style.display = 'block'
     
-    sectioMensajes.appendChild(parrafo)
+    //sectioMensajes.appendChild(parrafo)
 
     let botonFuego = document.getElementById('boton-fuego')
     botonFuego.disabled= true

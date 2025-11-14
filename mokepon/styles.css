@@ -80,3 +80,25 @@ input{
     color: white;
     font-family: "Poppins", sans-serif;
 }
+
+#mensajes{
+    width: 280px;
+    background: #87BAC3;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#boton-reiniciar{
+    border: none;
+    color: #473472;
+    font-family: "Poppins", sans-serif;
+}
+
+.ataques{
+    display: grid;
+}
+/* El atajo del teclado para comentar las lineas seleccionadas es ALT+SHIFT+A */
