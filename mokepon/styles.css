@@ -100,5 +100,11 @@ input{
 
 .ataques{
     display: grid;
+    grid-template-columns: 100px 100px;
+}
+
+.ataques div{
+    justify-items: center;
 }
 /* El atajo del teclado para comentar las lineas seleccionadas es ALT+SHIFT+A */
+/* orizontalmente centrados, seccion tipografia */
