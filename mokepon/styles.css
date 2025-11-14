@@ -12,7 +12,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 95vh;
 }
 
 .titulo{
@@ -126,7 +126,12 @@ input:checked + label{
     font-size: 32px;
     margin-bottom: 0;
 }
-
+.regresar a{
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
 @media(max-width: 650px){
     .tarjetas, .tarjetas-ataque{
         flex-direction: column;
