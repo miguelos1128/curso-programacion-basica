@@ -112,6 +112,7 @@ input:checked + label{
 .ataques{
     display: grid;
     grid-template-columns: 100px 100px;
+    color: white;
 }
 
 .ataques div{
