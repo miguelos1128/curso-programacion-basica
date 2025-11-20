@@ -22,12 +22,29 @@ const sectioMensajes = document.getElementById("resultado")
 const ataqueDelEnemigo = document.getElementById("ataque-del-enemigo")
 const ataqueDelJugador = document.getElementById("ataque-del-jugador") 
 
-
+let mokepones = []
 let vidasJugador = 3
 let vidasEnemigo = 3
 let ataqueJugador = ''
 let ataqueEnemigo = ''
 
+class Mokepon{
+    constructor(nombre, foto, vida){
+        this.nombre = nombre
+        this.foto = foto
+        this.vida = vida
+    }
+    
+}
+
+let hipodoge = new Mokepon('Hipodoge', './assets/Hipodogue.png', 5)
+
+let capipepo = new Mokepon('Capipepo', '../assets/capipepo.png', 5)
+
+let ratigueya = new Mokepon('Ratigueya', './assets/ratiguella.png', 5)
+
+mokepones.push(hipodoge, capipepo, ratigueya)
+console.log(mokepones)
 function iniciarJuego(){
 
     sectionSeleccionarMensaje.style.display = 'none'
