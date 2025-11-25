@@ -7,9 +7,7 @@ const botonAgua = document.getElementById('boton-agua')
 const botonTierra = document.getElementById('boton-tierra')
 const botonReiniciar = document.getElementById('boton-reiniciar')
 
-const inputHipodoge = document.getElementById('hipodoge')
-const inputRatigueya = document.getElementById('ratigueya')
-const inputCapipepo = document.getElementById('capipepo')
+
 const spanMascotaJugador = document.getElementById('mascota-jugador')
 const sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
 
@@ -21,12 +19,18 @@ const spanVidaJugador = document.getElementById('vidas-jugador')
 const sectioMensajes = document.getElementById("resultado")
 const ataqueDelEnemigo = document.getElementById("ataque-del-enemigo")
 const ataqueDelJugador = document.getElementById("ataque-del-jugador") 
+const contenedorTajetas = document.getElementById("contenedor-tajetas")
 
 let mokepones = []
 let vidasJugador = 3
 let vidasEnemigo = 3
 let ataqueJugador = ''
 let ataqueEnemigo = ''
+let opcionDeMokepones
+
+let inputHipodoge 
+let inputRatigueya 
+let inputCapipepo 
 
 class Mokepon{
     constructor(nombre, foto, vida){
@@ -40,7 +44,7 @@ class Mokepon{
 
 let hipodoge = new Mokepon('Hipodoge', './assets/Hipodogue.png', 5)
 
-let capipepo = new Mokepon('Capipepo', '../assets/capipepo.png', 5)
+let capipepo = new Mokepon('Capipepo', './assets/capipepo.png', 5)
 
 let ratigueya = new Mokepon('Ratigueya', './assets/ratiguella.png', 5)
 
@@ -69,13 +73,28 @@ ratigueya.ataques.push(
     { nombre: '🌱', id: 'boton-tierra'}
 
 )
-//mokepones.push(hipodoge, capipepo, ratigueya)
-console.log(hipodoge)
+mokepones.push(hipodoge, capipepo, ratigueya)
+//console.log(hipodoge)
 
 function iniciarJuego(){
 
     sectionSeleccionarMensaje.style.display = 'none'
     sectionBotonReiniciar.style.display = 'none'
+
+    mokepones.forEach((Mokepon) => {
+        opcionDeMokepones = `
+        <input type="radio" name="mascota" id="${Mokepon.nombre}"/>
+            <label class="tarjeta-de-mokepon" for= "${Mokepon.nombre}">
+                <p>${Mokepon.nombre}</p>
+                <img src="${Mokepon.foto}" alt="${Mokepon.nombre}">
+            </label>
+        `
+        contenedorTajetas.innerHTML += opcionDeMokepones
+
+        inputRatigueya = document.getElementById('Ratigueya')
+        inputCapipepo = document.getElementById('Capipepo')
+        inputHipodoge = document.getElementById('Hipodoge')
+    })
     botnMascotaJugador.addEventListener('click',seleccionarMascotaJugador)
     
     botonFuego.addEventListener('click',ataqueFuego)
