@@ -74,7 +74,7 @@ ratigueya.ataques.push(
 
 )
 mokepones.push(hipodoge, capipepo, ratigueya)
-//console.log(hipodoge)
+
 
 function iniciarJuego(){
 
@@ -105,20 +105,15 @@ function iniciarJuego(){
 }
 function seleccionarMascotaJugador(){
 
-    
-
-    
     sectionSeleccionarMascota.style.display = 'none'
-
-    
     sectionSeleccionarMensaje.style.display = 'flex'
 
     if(inputHipodoge.checked){
-       spanMascotaJugador.innerHTML = 'Hipodogue' 
+       spanMascotaJugador.innerHTML = inputHipodoge.id 
     }else if(inputRatigueya.checked){
-        spanMascotaJugador.innerHTML = 'Ratigueya'
+        spanMascotaJugador.innerHTML = inputRatigueya.id
     }else if(inputCapipepo.checked){
-        spanMascotaJugador.innerHTML = 'Capipepo'
+        spanMascotaJugador.innerHTML = inputRatigueya.id
     }else{
         alert("Debes seleccionar una mascota")
     }
@@ -127,19 +122,9 @@ function seleccionarMascotaJugador(){
 }
 
 function seleccionarMascotaEnemigo(){
-    let ataqueAleatorio = aleatorio(1,3)
-    let mascotaEnemigo = ""
-        
-            if(ataqueAleatorio==1){
-                mascotaEnemigo = "Hipodogue"
-            }else if(ataqueAleatorio == 2){
-                mascotaEnemigo = "Capipepo"
-            }else if(ataqueAleatorio == 3){
-                mascotaEnemigo = "Ratihueya"
-            }else{
-                mascotaEnemigo = "MAL ELEGIDO"
-            }
-    spanMascotaEnemigo.innerHTML = mascotaEnemigo
+    let ataqueAleatorio = aleatorio(0,mokepones.length -1 )
+    
+    spanMascotaEnemigo.innerHTML = mokepones[ataqueAleatorio].nombre
             
 }
 
