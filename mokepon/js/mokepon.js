@@ -24,9 +24,10 @@ const conetenedorAtaques = document.getElementById("conetenedor-ataques")
 let mokepones = []
 let vidasJugador = 3
 let vidasEnemigo = 3
-let ataqueEnemigo = ''
+let ataqueEnemigo = []
 let opcionDeMokepones
 let mascotaJugador
+let ataquesMokepoEnemigo
 let ataquesMokepon
 let inputHipodoge 
 let inputRatigueya 
@@ -35,7 +36,7 @@ let botonFuego
 let botonAgua
 let botonTierra
 let ataqueJugador = []
-let botones = {}
+let botones = []
 
 class Mokepon{
     constructor(nombre, foto, vida){
@@ -176,13 +177,15 @@ function secuenciaAtaque(){
                 console.log(ataqueJugador)
                 boton.style.background = '#112f58'
             }
+            elegirtAtaqueEnemigo()
         })
     })
 }
 function seleccionarMascotaEnemigo(){
-    let ataqueAleatorio = aleatorio(0,mokepones.length -1 )
+    let mascotaAleatoria = aleatorio(0,mokepones.length -1 )
     
-    spanMascotaEnemigo.innerHTML = mokepones[ataqueAleatorio].nombre
+    spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre
+    ataquesMokepoEnemigo = mokepones[mascotaAleatoria].ataques
     secuenciaAtaque() 
 }
 
@@ -190,18 +193,18 @@ function seleccionarMascotaEnemigo(){
 
 
 function elegirtAtaqueEnemigo() {
-    let ataqueEnemigoAleatorio = aleatorio(1,3)
+    let ataqueEnemigoAleatorio = aleatorio(0,ataquesMokepoEnemigo.length - 1)
     
-            if(ataqueEnemigoAleatorio==1){
-                ataqueEnemigo = "FUEGO"
-            }else if(ataqueEnemigoAleatorio == 2){
-                ataqueEnemigo = "AGUA"
+            if(ataqueEnemigoAleatorio == 0 || ataqueEnemigoAleatorio == 1){
+                ataqueEnemigo.push('FUEGO')
+            }else if(ataqueEnemigoAleatorio == 3 || ataqueEnemigoAleatorio == 4){
+                ataqueEnemigo.push('AGUA')
             }else if(ataqueEnemigoAleatorio == 3){
-                ataqueEnemigo = "TIERRA"
+                ataqueEnemigo.push('TIERRA')
             }else{
                 ataqueEnemigo = "MAL ELEGIDO"
             }
-
+            console.log(ataqueEnemigo)
             createMensaje()
     
 }
